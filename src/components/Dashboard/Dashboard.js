@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SpeedControl from '../SpeedControl/SpeedControl';
 import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
+import Passengers from '../Passengers/Passengers';
 
 
 // THIS COMPONENT IS OUR STATUS PAGE
@@ -14,8 +15,8 @@ class Dashboard extends Component {
       <div>
         <h2>Dashboard</h2>
         
-        <p>SPEED: {SpeedControl} </p>
-        <p>PASSENGER COUNT: GOES HERE</p>
+        <p>SPEED: {this.props.reduxState.speedReducer} </p>
+        <p>PASSENGER COUNT: {Passengers} </p>
       </div>
     )
   }
