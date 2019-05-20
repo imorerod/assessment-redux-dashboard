@@ -33,7 +33,15 @@ addNewPassenger = (event) => {
 }
 
   render() {
-    return (
+    const htmlArray = this.props.reduxState.passengerReducer.map((passenger, index) => {
+      return (
+          <div key={index}>
+              <p>{passenger.passenger}</p>
+          </div>
+      )
+  });
+
+  return (
       <div>
         <h2>Passengers</h2>
 
@@ -45,7 +53,8 @@ addNewPassenger = (event) => {
         <button onClick={this.addNewPassenger}>Add Passenger</button>
 
         <ul>PASSENGER LIST: {this.props.reduxState.passengerReducer}</ul>
-      
+        {/* <ul>PASSENGER LIST: {htmlArray}</ul> */}
+
       </div>
     )
   }
