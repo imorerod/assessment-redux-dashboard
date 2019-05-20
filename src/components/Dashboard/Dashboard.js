@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import SpeedControl from '../SpeedControl/SpeedControl';
+import { connect } from 'react-redux';
+import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
+
 
 // THIS COMPONENT IS OUR STATUS PAGE
 // YOU SHOULD DISPLAY THE CURRENT SPEED FROM SECTION ONE
@@ -10,11 +14,11 @@ class Dashboard extends Component {
       <div>
         <h2>Dashboard</h2>
         
-        <p>SPEED: GOES HERE</p>
+        <p>SPEED: {SpeedControl} </p>
         <p>PASSENGER COUNT: GOES HERE</p>
       </div>
     )
   }
 }
 
-export default Dashboard;
+export default connect(mapReduxStateToProps)(Dashboard);
